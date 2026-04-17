@@ -1,0 +1,6 @@
+# 默认忽略的文件
+/.idea/
+/.venv/
+/bill_data/
+/investment_data/
+/__pycache__/

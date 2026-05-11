@@ -7,3 +7,5 @@
 /data/
 afqmc_public.zip
 models/
+.venv/
+.vscode/

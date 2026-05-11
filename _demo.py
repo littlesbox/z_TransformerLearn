@@ -1,5 +1,5 @@
-import torch_learn
-from torch_learn import nn
+import chapter6.torch_learn as torch_learn
+from chapter6.torch_learn import nn
 
 # 模拟掩码：批次大小为 1，序列长度分别为 3 和 4
 query_mask = torch_learn.tensor([[1, 1, 0]])   # 形状 (1, 3)

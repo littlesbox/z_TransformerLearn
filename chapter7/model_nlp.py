@@ -67,26 +67,27 @@ train_data = AFQMC('data/afqmc_public/train.json')
 train_dataloader = DataLoader(train_data, batch_size=4, shuffle=True, collate_fn=collote_fn)
 
 # print(train_data[0])
+# print(len(train_data))
 
 batch_X, batch_y = next(iter(train_dataloader))
-print('batch_X shape:', {k: v.shape for k, v in batch_X.items()})
+# print('batch_X shape:', {k: v.shape for k, v in batch_X.items()})
 # print('batch_y shape:', batch_y.shape)
 # print(batch_X)
 # print(batch_y)
 
-# class BertForPairwiseCLS(nn.Module):
-#     def __init__(self):
-#         super(BertForPairwiseCLS, self).__init__()
-#         self.bert_encoder = AutoModel.from_pretrained(checkpoint)
-#         self.dropout = nn.Dropout(0.1)
-#         self.classifier = nn.Linear(768, 2)
+class BertForPairwiseCLS(nn.Module):
+    def __init__(self):
+        super(BertForPairwiseCLS, self).__init__()
+        self.bert_encoder = AutoModel.from_pretrained(checkpoint)
+        self.dropout = nn.Dropout(0.1)
+        self.classifier = nn.Linear(768, 2)
 
-#     def forward(self, x):
-#         bert_output = self.bert_encoder(**x)
-#         cls_vectors = bert_output.last_hidden_state[:, 0, :]
-#         cls_vectors = self.dropout(cls_vectors)
-#         logits = self.classifier(cls_vectors)
-#         return logits
+    def forward(self, x):
+        bert_output = self.bert_encoder(**x)
+        cls_vectors = bert_output.last_hidden_state[:, 0, :]
+        cls_vectors = self.dropout(cls_vectors)
+        logits = self.classifier(cls_vectors)
+        return logits
 
-# model = BertForPairwiseCLS().to(device)
-# print(model)
+model = BertForPairwiseCLS().to(device)
+print(model)

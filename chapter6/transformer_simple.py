@@ -1,7 +1,7 @@
-from torch_learn import nn
+from chapter6.torch_learn import nn
 from transformers import AutoConfig
 from transformers import AutoTokenizer
-import torch_learn
+import chapter6.torch_learn as torch_learn
 from math import sqrt
 import torch.nn.functional as F
 
@@ -96,7 +96,6 @@ class TransformerEncoderLayer(nn.Module):
         # Apply feed-forward layer with a skip connection
         x = x + self.feed_forward(self.layer_norm_2(x))
         return x
-    
 encoder_layer = TransformerEncoderLayer(config)
 print(inputs_embeds.shape)
 print(encoder_layer(inputs_embeds).size())

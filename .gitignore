@@ -9,3 +9,4 @@ afqmc_public.zip
 models/
 .venv/
 .vscode/
+data.tar.gz

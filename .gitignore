@@ -14,3 +14,4 @@ epoch_1_valid_acc_71.3_model_weights.bin
 epoch_2_valid_acc_72.6_model_weights.bin
 epoch_3_valid_acc_73.3_model_weights.bin
 china-people-daily-ner-corpus.tar.gz
+models_fune_tuning/

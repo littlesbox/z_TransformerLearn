@@ -94,7 +94,7 @@ model = BertForNER.from_pretrained(checkpoint, config=config).to(device)
 
 
 
-sentence = '日本外务省3月18日发布消息称，日本首相岸田文雄将于19至21日访问印度和柬埔寨。'
+sentence = '特朗普上周五结束了在北京与习近平的峰会，周末他发表了相关言论。他表示，他将暂缓一项价值约140亿美元的对台武器一揽子计划的决定，并称其为一个可用于同北京周旋的“非常好的谈判筹码”。'
 
 model.load_state_dict(
     torch.load('models_fune_tuning/BertForNER/epoch_3_valid_macrof1_95.944_microf1_96.071_weights.bin', map_location=torch.device(device))

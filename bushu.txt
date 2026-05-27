@@ -1,0 +1,1 @@
+python3 -m vllm.entrypoints.openai.api_server --model /root/ljl_fine_tuning/Qwen2.5-7B-Instruct-sft-fuchanke  --served-model-name qwen2.5-fuchanke --gpu-memory-utilization 0.3 --max-model-len 1024 --dtype=half --port 20202 
